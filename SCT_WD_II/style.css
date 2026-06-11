@@ -1,0 +1,107 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a, #1e1b4b);
+    --calc-bg: #1e293b;
+    --display-bg: #0f172a;
+    --text-primary: #f8fafc;
+    --text-accent: #38bdf8;
+    --btn-num: #334155;
+    --btn-op: #f97316;
+    --btn-action: #64748b;
+    --btn-hover: #475569;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator {
+    background-color: var(--calc-bg);
+    width: 100%;
+    max-width: 360px;
+    padding: 1.5rem;
+    border-radius: 28px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.display-container {
+    background-color: var(--display-bg);
+    padding: 1.5rem;
+    border-radius: 18px;
+    margin-bottom: 1.5rem;
+    text-align: right;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.history {
+    font-size: 0.95rem;
+    color: var(--text-accent);
+    min-height: 1.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05rem;
+    word-wrap: break-word;
+}
+
+.current-input {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    word-wrap: break-word;
+    font-variant-numeric: tabular-nums;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.btn {
+    border: none;
+    background-color: var(--btn-num);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 1.2rem 0;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.btn:hover { background-color: var(--btn-hover); }
+.btn:active { transform: scale(0.95); }
+
+.btn.operator { background-color: #2e3e56; color: var(--text-accent); }
+.btn.operator:hover { background-color: #3b5271; }
+
+.btn.action { background-color: var(--btn-action); }
+.btn.action:hover { background-color: #475569; }
+
+.btn.equals {
+    grid-column: span 1;
+    background-color: var(--btn-op);
+    color: white;
+}
+.btn.equals:hover { background-color: #ea580c; }
+
+.btn.zero {
+    grid-column: span 2;
+    padding-left: 1.5rem;
+    text-align: left;
+}
